@@ -41,6 +41,12 @@ class Course3Files(leancloud.Object):
 class Course4Files(leancloud.Object):
     pass
 
+class PunchCard(leancloud.Object):
+    pass
+
+class StudentProfile(leancloud.Object):
+    pass
+
 # 注册学生
 def register_student(username, password):
     new_student = Student()
