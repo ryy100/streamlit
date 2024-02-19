@@ -1,0 +1,10 @@
+streamlit==1.29.0
+requests==2.29.0
+numpy==1.25.2
+matplotlib==3.8.2
+pandas==1.5.0
+scikit-learn==1.1.2
+seaborn==0.13.0
+opencv-python-headless==4.9.0.80
+leancloud==2.9.12
+sklearn==0.0
