@@ -11,7 +11,7 @@ import Classroom_system
 import face_page
 # LeanCloud 初始化
 # LeanCloud 初始化
-leancloud.init("q62BpC06IhG9jDS6ujh12Swb-gzGzoHsz", "c9Y3b6v3A2nFrPkJNtAIcTd2")
+leancloud.init(st.secqrets["ID"], st.secqrets["key"])
 
 # 自定义样式
 def custom_css():
