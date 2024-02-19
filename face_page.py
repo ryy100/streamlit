@@ -22,11 +22,11 @@ import cv2
 
 # leancloud.init(st.secrets["ID"], st.secrets["key"])
 
-class PunchCard(leancloud.Object):
-    pass
+# class PunchCard(leancloud.Object):
+#     pass
 
-class StudentProfile(leancloud.Object):
-    pass
+# class StudentProfile(leancloud.Object):
+#     pass
 
 
 class AssembleHeaderException(Exception):
