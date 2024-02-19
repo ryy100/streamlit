@@ -9,6 +9,7 @@ import pie_bar_chart_page
 import decision_tree_page
 import Classroom_system
 import face_page
+import xunfeigpt
 # LeanCloud 初始化
 # LeanCloud 初始化
 leancloud.init(st.secrets["ID"], st.secrets["key"])
@@ -103,6 +104,7 @@ PAGES = {
     "决策树": decision_tree_page,
     "在线选座":Classroom_system,
     "人脸识别打卡":face_page,
+    "智能聊天机器人":xunfeigpt,
 }
 
 # 初始登录状态
