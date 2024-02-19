@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_lottie import st_lottie
 import requests
 
 def load_lottie(url):
@@ -16,6 +17,8 @@ def app():
     # 主页的内容
     with st.container():
         image_column, text_column = st.columns((1, 3))
+        with image_column:
+            st_lottie(lottie_animation1, height=100, key='coding')
         with text_column:
             st.title("欢迎来到数据分析与可视化工具")
 
@@ -26,6 +29,9 @@ def app():
                 这是一个简单的应用，用于展示数据分析和数据可视化的能力。\n
                 - 在 **频率分布图** 页面，您可以上传数据文件，进行绘制频率分布图。
                 - 在 **饼状图和直方图** 页面，您可以查看数据的图形表示，如饼图和条形图。
+                - 在 **决策树** 页面，您可以利用决策树算法对数据进行预测分析。
             """)
+        with r_column:
+            st_lottie(lottie_animation2, height=300, key="cod")
 
 
