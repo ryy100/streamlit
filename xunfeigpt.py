@@ -9,14 +9,14 @@ api_key = st.secrets["api_key"]
 domain = "generalv3"
 Spark_url = "ws://spark-api.xf-yun.com/v3.1/chat"
 
-# 初始化 Streamlit 状态
-# if 'conversation' not in st.session_state:
-#     st.session_state['conversation'] = []
+初始化 Streamlit 状态
+if 'conversation' not in st.session_state:
+    st.session_state['conversation'] = []
 
 def add_to_conversation(role, content):
-    # Check if 'conversation' key exists in session state, if not, initialize it as an empty list
-    if 'conversation' not in st.session_state:
-        st.session_state['conversation'] = []
+    # # Check if 'conversation' key exists in session state, if not, initialize it as an empty list
+    # if 'conversation' not in st.session_state:
+    #     st.session_state['conversation'] = []
 
     # Now you can safely append to the 'conversation' list
     st.session_state['conversation'].append({"role": role, "content": content})
