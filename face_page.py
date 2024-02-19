@@ -20,7 +20,7 @@ import json
 import requests
 import cv2
 
-leancloud.init(st.secqrets["ID"], st.secqrets["key"])
+leancloud.init(st.secqrets["ID"], st.secrets["key"])
 class PunchCard(leancloud.Object):
     pass
 
