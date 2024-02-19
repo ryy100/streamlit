@@ -8,7 +8,7 @@ import frequency_distribution_page
 import pie_bar_chart_page
 import decision_tree_page
 import Classroom_system
-import face_page
+# import face_page
 # LeanCloud 初始化
 # LeanCloud 初始化
 leancloud.init(st.secrets["ID"], st.secrets["key"])
@@ -96,7 +96,7 @@ PAGES = {
     "饼状图和直方图": pie_bar_chart_page,
     "决策树": decision_tree_page,
     "在线选座":Classroom_system,
-    "人脸识别打卡":face_page,
+    # "人脸识别打卡":face_page,
 }
 
 # 初始登录状态
