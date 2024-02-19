@@ -179,9 +179,6 @@ def run(appid, apikey, apisecret, img1_path, img2_path, server_id='s67c9c78c'):
 appid = st.secrets(["appid"])
 apisecret = st.secrets(["api_secret"])
 apikey = st.secrets(["api_key"])
-#appid = "5cd53875"
-#apisecret = "ZjJlNWVkZjMyZjcwNjJiZjAzMjNlOGQz"
-#apikey = "dc4971bf2c19bcb5a81f3f46dc795bd8"
 
 def app():
     # Streamlit 应用界面
