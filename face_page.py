@@ -21,6 +21,7 @@ import requests
 import cv2
 
 # leancloud.init(st.secrets["ID"], st.secrets["key"])
+
 class PunchCard(leancloud.Object):
     pass
 
@@ -87,6 +88,7 @@ def gen_body(appid, img1_data, img2_url, server_id):
     # with open(img1_path, 'rb') as f:
     #     img1_data = f.read()
     # with open(img2_path, 'rb') as f:
+    img1_data=img1_data.getbuffer()
     response = requests.get(img2_url)
     if response.status_code != 200:
         raise Exception("无法下载图像")
@@ -161,7 +163,7 @@ def get_student_image_path(username):
             image_file = student_profile.get("image_file")
             return image_file.url if image_file else None
     except leancloud.LeanCloudError as e:
-        print("获取学生图像路径失败：", str(e))
+        st.error("获取学生图像路径失败：", str(e))
     return None
 
 
@@ -175,10 +177,10 @@ def run(appid, apikey, apisecret, img1_path, img2_path, server_id='s67c9c78c'):
     return (base64.b64decode(resp_data['payload']['face_compare_result']['text']).decode())
 
 
-
 appid = st.secrets["appid"]
 apisecret = st.secrets["api_secret"]
 apikey = st.secrets["api_key"]
+
 
 def app():
     # Streamlit 应用界面
@@ -186,10 +188,14 @@ def app():
 
     with st.form("my_form"):
         username = st.text_input("用户名")
+        img1_bytes = st.camera_input("拍摄照片")
         submitted = st.form_submit_button("打卡")
 
         if submitted:
-            img1_bytes = capture_image_from_camera()
+            # img1_bytes = capture_image_from_camera()
+            # if image_data is not None:
+                # img1_bytes = img1_bytes.getvalue()
+            
             if img1_bytes:
                 # 从 LeanCloud 获取比对图像路径
 
@@ -200,7 +206,7 @@ def app():
                     # print(response)
                     response_dict = json.loads(response)
                     score = response_dict.get("score", 0)
-                    if score > 0.7:
+                    if score > 0.8:
                         # 记录打卡时间
                         try:
                             store_image_in_database(username, img1_bytes)
